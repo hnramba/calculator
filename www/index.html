@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+</head>
+    <body>
+
+        <!--home page-->
+        <div data-role="page" id="homepage" data-theme="a">
+
+        <div data-role="header">
+
+            <h1>Simple Calculator</h1>
+            
+            <div data-role="navbar">
+            <ul>
+            <li><a href="#homepage" data-icon="home">Home</a></li>
+            <li><a href="#calculator" data-icon="grid">Calculator</a></li>
+            <li><a href="#help" data-icon="info">Help</a></li>
+            </ul>
+            </div>
+
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <p> This is a jQuery mobile exercise which provides the user
+             with a calculator for basic mathematical operations</p>
+        </div>
+
+        <div data-role="footer">
+            <h3>Homework </h3>
+        </div> 
+        </div> 
+        <!--End home page-->
+
+        <!-- calculator-->
+        <div data-role="page" id="calculator" data-theme="a">
+
+        <div data-role="header">
+
+            <h1>Simple Calculator</h1>
+            
+            <div data-role="navbar">
+            <ul>
+            <li><a href="#homepage"  data-icon="home">Home</a></li>
+            <li><a href="#calculator" data-icon="grid">Calculator</a></li>
+            <li><a href="#help" data-icon="info">Help</a></li>
+            </ul>
+            </div>
+
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <input type="text" id="FirstNumber">
+            <select name="operation" id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">÷</option>
+            </select>
+            <input type="text" id="SecondNumber">
+            <a id="calculate_btn" href="#resultspage" data-role="button">Calculate</a>
+
+        </div>
+
+        <div data-role="footer">
+            <h3>Homework</h3>
+        </div> 
+        </div> 
+        <!--End calculator-->
+
+        <!-- Results-->
+        <div data-role="page" id="resultspage">
+            <div data-role="header">
+                <h1>RESULTS</h1>
+
+                <div data-role="navbar">
+                <ul>
+                    <li><a href="#homepage" data-icon="home">Home</a></li>
+                <li><a href="#calculator" data-icon="grid">Calculator</a></li>
+                <li><a href="#help" data-icon="info">Help</a></li>
+                </ul>
+                </div>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                    <div class="ui-content">
+                        <p>Operation:
+                        <h4 id="displaycalculation"> </h4>
+                        </p>
+
+                        <p>Results 
+                        <h4 id="result"> </h4> </p>
+                        <a data-role="button" data-rel="back" data-icon="back">Back</a>
+                    </div>
+                </div>
+
+            <div data-role="footer">
+                <h3>Homework</h3>
+            </div> 
+        </div> 
+        <!--End Results-->
+
+
+        <!--Help -->
+        <div data-role="page" id="help" data-theme="a">
+
+        <div data-role="header">
+
+            <h1>Simple Calculator</h1>
+            
+            <div data-role="navbar">
+            <ul>
+            <li><a href="#homepage" data-icon="home">Home</a></li>
+            <li><a href="#calculator" data-icon="grid">Calculator</a></li>
+            <li><a href="#help" data-icon="info">Help</a></li>
+            </ul>
+            </div>
+
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <p> This is the help section and provides basic information about how to use the calculator</p>
+            <a href="#help-popup" data-icon="info" data-role="button">More Info</a>
+        </div>
+
+        <div data-role="footer">
+            <h3>Homework</h3>
+        </div> 
+        </div> 
+        <!--End help-->
+
+        <!--popup-->
+        <div data-role="page" id="help-popup" data-dialog="true" data-theme="a">
+
+        <div data-role="header">
+            <h1>More Info</h1>
+        </div>
+            
+
+        <div data-role="main" class="ui-content">
+            <p> You have requested more information about the App!</p>
+            <a data-role="button" data-rel="back" data-icon="back">Dismiss</a>
+        </div>
+
+
+        </div> 
+        <!--End popup-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="cordova.js"></script>
+    </body>
+</html>
