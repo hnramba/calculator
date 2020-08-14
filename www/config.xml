@@ -6,7 +6,7 @@
     version     = "1.0.0" >
 
 <!-- versionCode is optional and Android only -->
-<preference name="android-targetSdkVersion" value="28"/>
+
   <name>Calculator Example</name>
 
   <description>
@@ -16,5 +16,10 @@
   <author href="https://build.phonegap.com" email="hnramba@gmail.com">
       Rambarassah Hootesh
   </author>
+  
+  <platform name="android">
+   <preference name="Fullscreen" value="true" />
+   <preference name="android-targetSdkVersion" value="28"/>
+  </platform>
 
 </widget>
