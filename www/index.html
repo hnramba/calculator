@@ -1,155 +1,129 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
-</head>
-    <body>
-
-        <!--home page-->
-        <div data-role="page" id="homepage" data-theme="a">
-
-        <div data-role="header">
-
-            <h1>Simple Calculator</h1>
-            
-            <div data-role="navbar">
-            <ul>
-            <li><a href="#homepage" data-icon="home">Home</a></li>
-            <li><a href="#calculator" data-icon="grid">Calculator</a></li>
-            <li><a href="#help" data-icon="info">Help</a></li>
-            </ul>
-            </div>
-
-        </div>
-
-        <div data-role="main" class="ui-content">
-            <p> This is a jQuery mobile exercise which provides the user
-             with a calculator for basic mathematical operations</p>
-        </div>
-
-        <div data-role="footer">
-            <h3>Homework </h3>
-        </div> 
-        </div> 
-        <!--End home page-->
-
-        <!-- calculator-->
-        <div data-role="page" id="calculator" data-theme="a">
-
-        <div data-role="header">
-
-            <h1>Simple Calculator</h1>
-            
-            <div data-role="navbar">
-            <ul>
-            <li><a href="#homepage"  data-icon="home">Home</a></li>
-            <li><a href="#calculator" data-icon="grid">Calculator</a></li>
-            <li><a href="#help" data-icon="info">Help</a></li>
-            </ul>
-            </div>
-
-        </div>
-
-        <div data-role="main" class="ui-content">
-            <input type="text" id="FirstNumber">
-            <select name="operation" id="operation">
-                <option value="+">+</option>
-                <option value="-">-</option>
-                <option value="*">*</option>
-                <option value="/">÷</option>
-            </select>
-            <input type="text" id="SecondNumber">
-            <a id="calculate_btn" href="#resultspage" data-role="button">Calculate</a>
-
-        </div>
-
-        <div data-role="footer">
-            <h3>Homework</h3>
-        </div> 
-        </div> 
-        <!--End calculator-->
-
-        <!-- Results-->
-        <div data-role="page" id="resultspage">
-            <div data-role="header">
-                <h1>RESULTS</h1>
-
-                <div data-role="navbar">
-                <ul>
-                    <li><a href="#homepage" data-icon="home">Home</a></li>
-                <li><a href="#calculator" data-icon="grid">Calculator</a></li>
-                <li><a href="#help" data-icon="info">Help</a></li>
-                </ul>
-                </div>
-            </div>
-
-            <div data-role="main" class="ui-content">
-                    <div class="ui-content">
-                        <p>Operation:
-                        <h4 id="displaycalculation"> </h4>
-                        </p>
-
-                        <p>Results 
-                        <h4 id="result"> </h4> </p>
-                        <a data-role="button" data-rel="back" data-icon="back">Back</a>
-                    </div>
-                </div>
-
-            <div data-role="footer">
-                <h3>Homework</h3>
-            </div> 
-        </div> 
-        <!--End Results-->
+    <meta charset="UTF-8" />
+	
+	<!-- This ensures the canvas works on IE9+.  Don't remove it! -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<!-- Standardised web app manifest -->
+	<link rel="manifest" href="appmanifest.json" />
+	
+	<title>Webcam effects</title>
+	<!-- Note: running this exported project from disk may not work exactly like preview, since browsers block some features on the file:// protocol.  Once you've uploaded it to a server, it should work OK. -->
+	
+    <!-- This outlines the canvas with a black border and makes the page background black. -->
+	<style type="text/css">
+		body { background-color: black; color: white; }
+		canvas { -ms-touch-action: none; }
+	</style>
 
 
-        <!--Help -->
-        <div data-role="page" id="help" data-theme="a">
+</head> 
+ 
+<body> 
+	<div id="fb-root"></div>
+	<div style="text-align: center;">
 
-        <div data-role="header">
+	<script>
+	// Issue a warning if trying to preview an exported project on disk.
+	(function(){
+		// Check for running exported on file protocol
+		if (window.location.protocol.substr(0, 4) === "file")
+		{
+			alert("Exported games won't work until you upload them. (When running on the file:/// protocol, browsers block many features from working for security reasons.)");
+		}
+	})();
+	</script>
 
-            <h1>Simple Calculator</h1>
-            
-            <div data-role="navbar">
-            <ul>
-            <li><a href="#homepage" data-icon="home">Home</a></li>
-            <li><a href="#calculator" data-icon="grid">Calculator</a></li>
-            <li><a href="#help" data-icon="info">Help</a></li>
-            </ul>
-            </div>
+		<!-- The canvas must be inside a div called c2canvasdiv -->
+		<div id="c2canvasdiv" style="margin: 0 auto; width: 640px; height: 480px;">
+		
+			<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
+			ID the runtime looks for in the jQuery ready event (above). -->
+			<canvas id="c2canvas" width="640" height="480">
+				<!-- This text is displayed if the visitor's browser does not support HTML5.
+				You can change it, but it is a good idea to link to a description of a browser
+				and provide some links to download some popular HTML5-compatible browsers. -->
+				Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org">What is a browser?</a>
+				<br/><br/><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
+				<a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
+				<a href="http://www.google.com/chrome/">Google Chrome</a><br/>
+				<a href="http://www.apple.com/safari/download/">Apple Safari</a><br/>
+			</canvas>
+			
+		</div>
 
-        </div>
+        <br />
+		
+		<!-- SCIRRA LTD LICENSE AGREEMENT
+			 FREE EDITION USERS ARE NOT ALLOWED TO REMOVE, MODIFY OR HIDE THE FOLLOWING
+			 LINES OF HTML5 CODE FROM THEIR EXPORTED GAMES. REMOVAL, MODIFICATION OR
+			 ATTEMPTS TO HIDE THIS MESSAGE WILL BE IN BREACH OF THE FREE EDITION LICENSE
+		-->
+		<a href="https://www.construct.net" target="_blank" style="font-family:Arial;color:DodgerBlue;" title="Make games">Made with Construct &mdash; the HTML5 game creator</a>
+		<!-- End of Scirra Ltd. free edition limitation -->
 
-        <div data-role="main" class="ui-content">
-            <p> This is the help section and provides basic information about how to use the calculator</p>
-            <a href="#help-popup" data-icon="info" data-role="button">More Info</a>
-        </div>
+	</div>
+	
+	<!-- Pages load faster with scripts at the bottom -->
+	
+	<!-- Construct 2 exported games require jQuery. -->
+	<script src="jquery-3.4.1.min.js"></script>
 
-        <div data-role="footer">
-            <h3>Homework</h3>
-        </div> 
-        </div> 
-        <!--End help-->
+	<script src="adapter.js"></script>
 
-        <!--popup-->
-        <div data-role="page" id="help-popup" data-dialog="true" data-theme="a">
+	
+    <!-- The runtime script.  You can rename it, but don't forget to rename the reference here as well.
+    This file will have been minified and obfuscated if you enabled "Minify script" during export. -->
+	<script src="c2runtime.js"></script>
 
-        <div data-role="header">
-            <h1>More Info</h1>
-        </div>
-            
-
-        <div data-role="main" class="ui-content">
-            <p> You have requested more information about the App!</p>
-            <a data-role="button" data-rel="back" data-icon="back">Dismiss</a>
-        </div>
-
-
-        </div> 
-        <!--End popup-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery.mobile-1.4.5.min.js"></script>
-        <script src="js/script.js"></script>
-        <script src="cordova.js"></script>
-    </body>
-</html>
+    <script>
+		// Start the Construct 2 project running on window load.
+		jQuery(document).ready(function ()
+		{
+			// Create new runtime using the c2canvas
+			cr_createRuntime("c2canvas");
+		});
+		
+		// Pause and resume on page becoming visible/invisible
+		function onVisibilityChanged() {
+			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+				cr_setSuspended(true);
+			else
+				cr_setSuspended(false);
+		};
+		
+		document.addEventListener("visibilitychange", onVisibilityChanged, false);
+		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+		
+		function OnRegisterSWError(e)
+		{
+			console.warn("Failed to register service worker: ", e);
+		};
+		
+		// Runtime calls this global method when ready to start caching (i.e. after startup).
+		// This registers the service worker which caches resources for offline support.
+		window.C2_RegisterSW = function C2_RegisterSW()
+		{
+			if (!navigator.serviceWorker)
+				return;		// no SW support, ignore call
+			
+			try {
+				navigator.serviceWorker.register("sw.js", { scope: "./" })
+				.then(function (reg)
+				{
+					console.log("Registered service worker on " + reg.scope);
+				})
+				.catch(OnRegisterSWError);
+			}
+			catch (e)
+			{
+				OnRegisterSWError(e);
+			}
+		};
+    </script>
+</body> 
+</html> 
